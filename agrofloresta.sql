@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 02-Maio-2018 às 20:03
+-- Data de Criação: 02-Maio-2018 às 20:11
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -61,11 +61,11 @@ CREATE TABLE IF NOT EXISTS `cultura` (
 --
 
 CREATE TABLE IF NOT EXISTS `localizacao` (
-  `ID` int(5) NOT NULL AUTO_INCREMENT,
-  `Pais` varchar(50) NOT NULL,
-  `Estado` varchar(50) NOT NULL,
-  `Municipio` varchar(50) NOT NULL,
-  PRIMARY KEY (`ID`)
+  `ID_localizacao` int(5) NOT NULL AUTO_INCREMENT,
+  `pais` varchar(50) NOT NULL,
+  `estado` varchar(50) NOT NULL,
+  `municipio` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID_localizacao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
