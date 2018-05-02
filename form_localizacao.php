@@ -1,16 +1,21 @@
 <?php 
 	include "conexao.php";
+	include "funcao.php";
 ?>
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>Entrada de Dados da Àrea</title>
+		<title>Entrada de Dados da Localização</title>
 	</head>
 	
 	<body>
-		<form action="cadastro_localizacao.php" method="post">
-			<fieldset>
-				<legend>Entrada de Dados</legend>
+		<?php 
+			menu();
+		?>
+		<fieldset>
+			<legend>Entrada de Dados</legend>
+			
+			<form action="cadastro_localizacao.php" method="post">				
 				
 				<label>Nome do País: </label>
 				<input type="text" name="nomePais"/>
@@ -30,7 +35,7 @@
 				
 				
 				<input type="submit" value="Enviar"/>
-			</fieldset>
-		</form>
+			</form>
+		</fieldset>
 	</body>
 </html>

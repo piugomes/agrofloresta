@@ -1,6 +1,5 @@
 <?php 
 	include "conexao.php";
-	include "funcao.php";
 ?>
 <html>
 	<head>
@@ -8,11 +7,14 @@
 	</head>
 	<body>
 		<?php
-			$nomePais = $_POST["nomePais"];
-			$estado = $_POST["estado"];
-			$municipio = $_POST["municipio"];
 			
-			$insert = "insert into localizacao (pais, estado, municipio) values('$nomePais', '$estado', '$municipio')";
+			$localizacao = $_POST["localizacao"];
+			$nomeArea = $_POST["nomeArea"];
+			$unidade = $_POST["unidade"];
+			$tamanho = $_POST["tamanho"];
+			
+			$insert = "insert into area (cod_localizacao, nome, uni_medida, tamanho) values('$localizacao', '$nomeArea', 
+			'$unidade', '$tamanho')";
 	
 			if (mysqli_query($link, $insert)){	//insere os dados acima no BD loja2
 			
