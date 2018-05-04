@@ -1,14 +1,23 @@
 <?php 
 	include "conexao.php";
+	include "funcao.php";
 ?>
+
 <html>
+
 	<head>
+	
 		<meta charset="utf-8"/>
 		<title>Entrada de Dados da Àrea</title>
+		
 	</head>
 	
 	<body>
+	
+		<?php menu(); ?>
+	
 		<fieldset>
+		
 			<legend>Entrada de Dados</legend>
 			
 			<form action="cadastro_area.php" method="post">
