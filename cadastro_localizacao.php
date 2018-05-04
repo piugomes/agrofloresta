@@ -8,7 +8,7 @@
 	<head>
 	
 		<meta charset="utf-8" />
-		<title>Agrofloresta - Cultura</title>
+		<title>Agrofloresta - Localização</title>
 		
 	</head>
 	

@@ -26,7 +26,7 @@
 			$produzida = $_POST["produzida"];
 			$esperada = $_POST["esperada"];
 			
-			$insert = "INSERT INTO cultura (cod_area, tipo, nome, renda, gasto, q_produzida, q_esperada)
+			$insert = "INSERT INTO cultura (cod_area, tipo, nome_cul, renda, gasto, q_produzida, q_esperada)
 			values('$area', '$tipo', '$nome', '$renda', '$gasto', '$produzida', '$esperada')";
 	
 			if (mysqli_query($link, $insert)){
