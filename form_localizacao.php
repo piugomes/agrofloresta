@@ -9,9 +9,14 @@
 	</head>
 	
 	<body>
-		<?php 
+	
+		<?php
+		
 			menu();
+			lista();
+			
 		?>
+		
 		<fieldset>
 			<legend>Entrada de Dados</legend>
 			

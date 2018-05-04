@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 04-Maio-2018 às 17:39
+-- Data de Criação: 04-Maio-2018 às 18:45
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -31,18 +31,18 @@ USE `agrofloresta`;
 CREATE TABLE IF NOT EXISTS `area` (
   `ID_area` int(5) NOT NULL AUTO_INCREMENT,
   `cod_localizacao` varchar(50) NOT NULL,
-  `nome` varchar(50) NOT NULL,
+  `nome_cul` varchar(50) NOT NULL,
   `uni_medida` varchar(10) NOT NULL,
   `tamanho` double NOT NULL,
   PRIMARY KEY (`ID_area`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `area`
 --
 
-INSERT INTO `area` (`ID_area`, `cod_localizacao`, `nome`, `uni_medida`, `tamanho`) VALUES
-(1, '1', 'Gomes', 'Ares', 100000);
+INSERT INTO `area` (`ID_area`, `cod_localizacao`, `nome_cul`, `uni_medida`, `tamanho`) VALUES
+(5, '4', 'Monteuro', 'Hectare', 16548);
 
 -- --------------------------------------------------------
 
@@ -62,6 +62,13 @@ CREATE TABLE IF NOT EXISTS `cultura` (
   PRIMARY KEY (`ID_cultura`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `cultura`
+--
+
+INSERT INTO `cultura` (`ID_cultura`, `cod_area`, `tipo`, `nome`, `renda`, `gasto`, `q_produzida`, `q_esperada`) VALUES
+(0, 4, 'Planta', 'Cenoura', 5000, 100, 100, 1000);
+
 -- --------------------------------------------------------
 
 --
@@ -74,14 +81,14 @@ CREATE TABLE IF NOT EXISTS `localizacao` (
   `estado` varchar(50) NOT NULL,
   `municipio` varchar(50) NOT NULL,
   PRIMARY KEY (`ID_localizacao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Extraindo dados da tabela `localizacao`
 --
 
 INSERT INTO `localizacao` (`ID_localizacao`, `pais`, `estado`, `municipio`) VALUES
-(1, 'Brasil', 'Cancer', 'sagitari9o');
+(4, 'BR', 'saddbsahda', 'RJ');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

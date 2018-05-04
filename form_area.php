@@ -14,7 +14,12 @@
 	
 	<body>
 	
-		<?php menu(); ?>
+		<?php
+		
+			menu();
+			lista();
+			
+		?>
 	
 		<fieldset>
 		

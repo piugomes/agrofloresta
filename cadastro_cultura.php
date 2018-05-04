@@ -17,6 +17,7 @@
 		<?php
 		
 			menu();
+			lista();
 		
 			$area = $_POST["area"];
 			$nome = $_POST["nome"];

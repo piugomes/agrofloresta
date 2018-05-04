@@ -15,7 +15,8 @@
 	<body>
 		<?php
 		
-			menu(); 
+			menu();
+			lista();
 			
 			$nomePais = $_POST["nomePais"];
 			$estado = $_POST["estado"];

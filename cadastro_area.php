@@ -16,6 +16,7 @@
 		<?php
 		
 			menu();
+			lista();
 			
 			$localizacao = $_POST["localizacao"];
 			$nomeArea = $_POST["nomeArea"];
