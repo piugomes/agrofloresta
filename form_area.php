@@ -43,7 +43,7 @@
 				<br />
 				<br />
 				
-				<label>Nome da Àrea: </label>
+				<label>Nome da Área: </label>
 				<input type="text" name="nomeArea"/>
 				<br />
 				<br />

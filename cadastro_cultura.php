@@ -19,6 +19,7 @@
 			menu();
 		
 			$area = $_POST["area"];
+			$nome = $_POST["nome"];
 			$tipo = $_POST["tipo"];
 			$renda = $_POST["renda"];
 			$gasto = $_POST["gasto"];
@@ -26,7 +27,7 @@
 			$esperada = $_POST["esperada"];
 			
 			$insert = "INSERT INTO cultura (cod_area, tipo, nome, renda, gasto, q_produzida, q_esperada)
-			values('$local', '$tipo', '$renda', '$gasto', '$produzida', '$esperada')";
+			values('$area', '$tipo', '$nome', '$renda', '$gasto', '$produzida', '$esperada')";
 	
 			if (mysqli_query($link, $insert)){
 			
