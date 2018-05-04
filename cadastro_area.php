@@ -1,12 +1,21 @@
 <?php 
 	include "conexao.php";
+	include "funcao.php";
 ?>
+
 <html>
+
 	<head>
-		<title>Agrofloresta- Gravar</title>
+	
+		<meta charset="utf-8" />
+		<title>Agrofloresta - Cultura</title>
+		
 	</head>
+	
 	<body>
 		<?php
+		
+			menu();
 			
 			$localizacao = $_POST["localizacao"];
 			$nomeArea = $_POST["nomeArea"];
@@ -16,7 +25,7 @@
 			$insert = "insert into area (cod_localizacao, nome, uni_medida, tamanho) values('$localizacao', '$nomeArea', 
 			'$unidade', '$tamanho')";
 	
-			if (mysqli_query($link, $insert)){	//insere os dados acima no BD loja2
+			if (mysqli_query($link, $insert)){
 			
 				echo "<h1>Cadastrado!!</h1>";
 			}else{

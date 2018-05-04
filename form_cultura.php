@@ -1,5 +1,6 @@
 <?php 
 	include "conexao.php";
+	include "funcao.php";
 ?>
 <html>
 
@@ -12,35 +13,13 @@
 	
 	<body>
 	
+		<?php menu(); ?>
+	
 		<fieldset>
 			
 			<legend>Entrada de Dados</legend>
 	
 			<form action="cadastro_cultura.php" method="post">
-		
-			
-				
-				// <label>Localização: </label>
-				// <select name="local">
-				
-					 <?php
-					
-						// $select = "SELECT * FROM localizacao";
-						
-						// $resultado = mysqli_query($link, $select) or die(mysqli_error($link));
-						
-						// while( $linha = mysqli_fetch_array($resultado) ){
-						
-							// echo "<option value='" . $linha["ID_localizacao"] ."' > " . $linha["pais"] . " - "
-							// . $linha["estado"] . " / " . $linha["municipio"] . " </option>";
-							
-						// }
-					
-					 ?>
-				
-				// </select>
-				// <br />
-				// <br />
 				
 				<label>Nome da Área: </label>
 				<select name="area">
