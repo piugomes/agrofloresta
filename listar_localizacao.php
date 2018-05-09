@@ -6,13 +6,14 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Listar localização</title>
+		<link rel="stylesheet" href="estilos.css"/>
 	</head>
-	<body>
+	<body class="corpo">
 		<?php 
 			menu();
 			lista();
 		?>
-		<table>
+		<table class="table">
 			<thead>
 				<tr>
 					<th>ID localização</th>
@@ -32,7 +33,7 @@
 					$resultado = mysqli_query($link, $select) or die(mysqli_error($link));
 					
 					while($linha = mysqli_fetch_array($resultado)){
-						echo "<tr>";
+						echo "<tr class='tr'>";
 							echo "<td>" . $linha["ID_localizacao"] . "</td>";			
 							echo "<td>" . $linha["pais"] . "</td>";			
 							echo "<td>" . $linha["estado"] . "</td>";

@@ -1,0 +1,23 @@
+.corpo{
+	background-color: #A9A9A9;
+}
+
+.fieldset{
+	border-color: black;
+}
+
+label{
+	border-color: black;
+}
+
+.link{
+	text-align: center;
+}
+
+.table{
+	border: 1px solid black;
+}
+
+.tr{
+	border: 1px solid black;
+}

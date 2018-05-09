@@ -9,10 +9,10 @@
 	
 		<meta charset="utf-8" />
 		<title>Agrofloresta - Área</title>
-		
+		<link rel="stylesheet" href="estilos.css"/>
 	</head>
 	
-	<body>
+	<body class="corpo">
 		<?php
 		
 			menu();

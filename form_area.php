@@ -9,10 +9,10 @@
 	
 		<meta charset="utf-8"/>
 		<title>Entrada de Dados da Àrea</title>
-		
+		<link rel="stylesheet" href="estilos.css"/>
 	</head>
 	
-	<body>
+	<body class="corpo">
 	
 		<?php
 		
@@ -21,7 +21,7 @@
 			
 		?>
 	
-		<fieldset>
+		<fieldset class="fieldset">
 		
 			<legend>Entrada de Dados</legend>
 			

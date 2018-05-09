@@ -6,9 +6,10 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Entrada de Dados da Localização</title>
+		<link rel="stylesheet" href="estilos.css"/>
 	</head>
 	
-	<body>
+	<body class="corpo">
 	
 		<?php
 		
@@ -17,7 +18,7 @@
 			
 		?>
 		
-		<fieldset>
+		<fieldset class="fieldset">
 			<legend>Entrada de Dados</legend>
 			
 			<form action="cadastro_localizacao.php" method="post">				

@@ -9,10 +9,10 @@
 	
 		<meta charset="utf-8" />
 		<title>Agrofloresta - Listar Cultura</title>
-		
+		<link rel="stylesheet" href="estilos.css"/>
 	</head>
 	
-	<body>
+	<body class="corpo">
 	
 		<?php
 		
@@ -21,21 +21,21 @@
 		
 		?>
 	
-		<table>
+		<table class="table">
 		
 			<thead>
 			
 				<tr>
 				
-					<td>ID da Cultura</td>
-					<td>Localização</td>
-					<td>Nome da Área</td>
-					<td>Tipo</td>
-					<td>Nome</td>
-					<td>Renda</td>
-					<td>Gasto com a produção</td>
-					<td>Quantidade Produzida</td>
-					<td>Quantidade Estimada</td>
+					<th>ID da Cultura</th>
+					<th>Localização</th>
+					<th>Nome da Área</th>
+					<th>Tipo</th>
+					<th>Nome</th>
+					<th>Renda</th>
+					<th>Gasto com a produção</th>
+					<th>Quantidade Produzida</th>
+					<th>Quantidade Estimada</th>
 				
 				</tr>
 			

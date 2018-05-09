@@ -9,10 +9,10 @@
 	
 		<meta charset="utf-8" />
 		<title>Agrofloresta - Listar Cultura</title>
-		
+		<link rel="stylesheet" href="estilos.css"/>
 	</head>
 	
-	<body>
+	<body class="corpo">
 	
 		<?php
 		
@@ -21,17 +21,17 @@
 		
 		?>
 	
-		<table>
+		<table class="table">
 		
 			<thead>
 			
 				<tr>
 				
-					<td>ID da Área</td>
-					<td>Localização</td>
-					<td>Nome</td>
-					<td>Unidade de Medida</td>
-					<td>Tamanho</td>
+					<th>ID da Área</th>
+					<th>Localização</th>
+					<th>Nome</th>
+					<th>Unidade de Medida</th>
+					<th>Tamanho</th>
 				
 				</tr>
 			
