@@ -74,23 +74,23 @@
 				<br />
 				<br />
 				
-				<label>Renda: </label>
-				<input type="text" name="renda" value="<?=$linha['renda']?>" />
+				<label>Renda (R$): </label>
+				<input type="number" step="0.01" name="renda" value="<?=$linha['renda']?>" />
 				<br />
 				<br />
 				
-				<label>Gasto com a cultura: </label>
-				<input type="text" name="gasto" value="<?=$linha['gasto']?>" />
+				<label>Gasto com a cultura (R$): </label>
+				<input type="number" step="0.01" name="gasto" value="<?=$linha['gasto']?>" />
 				<br />
 				<br />
 				
 				<label>Quantidade produzida (Kg): </label>
-				<input type="text" name="produzida" value="<?=$linha['q_produzida']?>" />
+				<input type="number" step="0.01" name="produzida" value="<?=$linha['q_produzida']?>" />
 				<br />
 				<br />
 				
 				<label>Quantidade esperada (Kg): </label>
-				<input type="text" name="esperada" value="<?=$linha['q_esperada']?>" />
+				<input type="number" step="0.01" name="esperada" value="<?=$linha['q_esperada']?>" />
 				<br />
 				<br />
 				

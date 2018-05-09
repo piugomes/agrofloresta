@@ -32,8 +32,8 @@
 			$id = $_POST["id"];
 			
 			$insert = "UPDATE cultura SET cod_area = '$area', tipo = '$tipo', nome_cul = '$nome',
-			renda = '$renda', gasto = '$gasto', q_produzida = '$produzida', q_esperada = '$esperada
-			WHERE ID_cultura = $'id'";
+			renda = '$renda', gasto = '$gasto', q_produzida = '$produzida', q_esperada = '$esperada'
+			WHERE ID_cultura = '$id'";
 	
 			if (mysqli_query($link, $insert)){
 			

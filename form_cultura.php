@@ -57,23 +57,23 @@
 				<br />
 				<br />
 				
-				<label>Renda: </label>
-				<input type="text" name="renda"/>
+				<label>Renda (R$): </label>
+				<input type="number" step="0.01" name="renda"/>
 				<br />
 				<br />
 				
-				<label>Gasto com a cultura: </label>
-				<input type="text" name="gasto"/>
+				<label>Gasto com a cultura (R$): </label>
+				<input type="number" step="0.01" name="gasto"/>
 				<br />
 				<br />
 				
 				<label>Quantidade produzida (Kg): </label>
-				<input type="text" name="produzida"/>
+				<input type="number" step="0.01" name="produzida"/>
 				<br />
 				<br />
 				
 				<label>Quantidade esperada (Kg): </label>
-				<input type="text" name="esperada"/>
+				<input type="number" step="0.01" name="esperada"/>
 				<br />
 				<br />
 				
