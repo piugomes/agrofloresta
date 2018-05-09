@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 04-Maio-2018 às 18:53
+-- Data de Criação: 09-Maio-2018 às 02:40
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -34,15 +34,19 @@ CREATE TABLE IF NOT EXISTS `area` (
   `nome` varchar(50) NOT NULL,
   `uni_medida` varchar(10) NOT NULL,
   `tamanho` double NOT NULL,
-  PRIMARY KEY (`ID_area`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  PRIMARY KEY (`ID_area`),
+  KEY `cod_localizacao` (`cod_localizacao`),
+  KEY `ID_area` (`ID_area`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `area`
 --
 
 INSERT INTO `area` (`ID_area`, `cod_localizacao`, `nome`, `uni_medida`, `tamanho`) VALUES
-(5, '4', 'Monteuro', 'Hectare', 16548);
+(1, '1', 'Monteiro', 'Hectare', 1000),
+(2, '1', 'Gomes', 'Alqueires', 1000),
+(3, '1', 'Jamil', 'Ares', 1000);
 
 -- --------------------------------------------------------
 
@@ -51,7 +55,7 @@ INSERT INTO `area` (`ID_area`, `cod_localizacao`, `nome`, `uni_medida`, `tamanho
 --
 
 CREATE TABLE IF NOT EXISTS `cultura` (
-  `ID_cultura` int(5) NOT NULL DEFAULT '0',
+  `ID_cultura` int(5) NOT NULL AUTO_INCREMENT,
   `cod_area` int(5) NOT NULL,
   `tipo` varchar(50) NOT NULL,
   `nome_cul` varchar(50) NOT NULL,
@@ -59,15 +63,16 @@ CREATE TABLE IF NOT EXISTS `cultura` (
   `gasto` float NOT NULL,
   `q_produzida` float NOT NULL,
   `q_esperada` float NOT NULL,
-  PRIMARY KEY (`ID_cultura`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`ID_cultura`),
+  KEY `cod_area` (`cod_area`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `cultura`
 --
 
 INSERT INTO `cultura` (`ID_cultura`, `cod_area`, `tipo`, `nome_cul`, `renda`, `gasto`, `q_produzida`, `q_esperada`) VALUES
-(0, 4, 'Planta', 'Cenoura', 5000, 100, 100, 1000);
+(3, 1, 'Lenhosa', 'Pau-Brasil', 10000.5, 5000, 30000, 20750);
 
 -- --------------------------------------------------------
 
@@ -80,15 +85,29 @@ CREATE TABLE IF NOT EXISTS `localizacao` (
   `pais` varchar(50) NOT NULL,
   `estado` varchar(50) NOT NULL,
   `municipio` varchar(50) NOT NULL,
-  PRIMARY KEY (`ID_localizacao`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  PRIMARY KEY (`ID_localizacao`),
+  KEY `ID_localizacao` (`ID_localizacao`),
+  KEY `ID_localizacao_2` (`ID_localizacao`),
+  KEY `ID_localizacao_3` (`ID_localizacao`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `localizacao`
 --
 
 INSERT INTO `localizacao` (`ID_localizacao`, `pais`, `estado`, `municipio`) VALUES
-(4, 'BR', 'saddbsahda', 'RJ');
+(1, 'Brasil', 'SÃ£o Paulo', 'Araraquara'),
+(2, 'Brasil', 'SÃ£o Paulo', 'Barretos');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `cultura`
+--
+ALTER TABLE `cultura`
+  ADD CONSTRAINT `cultura_ibfk_1` FOREIGN KEY (`cod_area`) REFERENCES `area` (`ID_area`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
