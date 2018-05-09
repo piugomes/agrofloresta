@@ -46,7 +46,8 @@
 				<?php
 				
 					$select = "SELECT * FROM cultura
-					INNER JOIN area ON area.ID_area = cultura.cod_area";
+					INNER JOIN area ON area.ID_area = cultura.cod_area
+					INNER JOIN localizacao ON localizacao.ID_localizacao = area.cod_localizacao";
 					
 					$resultado = mysqli_query($link, $select) or die( mysqli_error($link));
 					
