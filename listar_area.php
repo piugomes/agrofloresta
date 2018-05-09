@@ -32,6 +32,7 @@
 					<th>Nome</th>
 					<th>Unidade de Medida</th>
 					<th>Tamanho</th>
+					<th colspan="2">Ação</th>
 				
 				</tr>
 			
@@ -56,6 +57,8 @@
 							echo "<td>" . $linha['nome'] . "</td>";
 							echo "<td>" . $linha['uni_medida'] . "</td>";
 							echo "<td>" . $linha['tamanho'] . "</td>";
+							echo "<td> <a href='form_alterar_area.php?id=" . $linha['ID_area'] . "'> Alterar </a></td>";
+							echo "<td> <a href='remove_area.php?id=" . $linha['ID_area'] . "'> Excluir </a></td>";
 						
 						echo "</tr>";
 						

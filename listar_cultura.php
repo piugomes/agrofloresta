@@ -36,6 +36,7 @@
 					<th>Gasto com a produção</th>
 					<th>Quantidade Produzida</th>
 					<th>Quantidade Estimada</th>
+					<th colspan="2">Ação</th>
 				
 				</tr>
 			
@@ -64,6 +65,8 @@
 							echo "<td>" . $linha['gasto'] . "</td>";
 							echo "<td>" . $linha['q_produzida'] . "</td>";
 							echo "<td>" . $linha['q_esperada'] . "</td>";
+							echo "<td> <a href='form_alterar_cultura.php?id=" . $linha['ID_cultura'] . "'> Alterar </a></td>";
+							echo "<td> <a href='remove_cultura.php?id=" . $linha['ID_cultura'] . "'> Excluir </a></td>";
 						
 						echo "</tr>";
 						

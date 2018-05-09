@@ -67,12 +67,12 @@
 				<br />
 				<br />
 				
-				<label>Quantidade produzida: </label>
+				<label>Quantidade produzida (Kg): </label>
 				<input type="text" name="produzida"/>
 				<br />
 				<br />
 				
-				<label>Quantidade esperada: </label>
+				<label>Quantidade esperada (Kg): </label>
 				<input type="text" name="esperada"/>
 				<br />
 				<br />

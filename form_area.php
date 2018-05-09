@@ -53,7 +53,9 @@
 				<br />
 				<br />
 				
-				<label>Unidade de Medida: </label>
+				<label>Tamanho / Unidade de Medida: </label>
+				<input type="number" name="tamanho"/>
+				
 				<select name="unidade">
 					<option value="Alqueires">Alqueires</option>
 					<option value="Hectare">Hectare</option>
@@ -62,10 +64,7 @@
 				<br />
 				<br />
 				
-				<label>Tamanho: </label>
-				<input type="number" name="tamanho"/>
-				<br />
-				<br />
+				
 				
 				
 				
