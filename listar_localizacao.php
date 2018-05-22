@@ -13,6 +13,44 @@
 			menu();
 			lista();
 		?>
+		<fieldset class="fieldset">
+			<legend>Filtro de Dados</legend>
+			
+			<form action="listar_localizacao.php" method="post">
+				<label>Filtrar país pelo nome que comece com: </label>
+				<input type="text" name="filtroLoc">
+				
+				<input type="submit" value="Enviar">
+			</form>
+			
+			<!-- <form action="listar_localizacao.php" method="post" name="ordenarLoc">
+				<select name="ordernacaoLoc" onchange="document.ordernacaoLoc.submit()">
+					
+					<option>:: Ordenar por ::</option>
+					
+					<option value="id_a_z">ID Localizacao (A->Z)</option>
+					<option value="id_z_a">ID Localizacao (Z->A)</option>
+					
+					<option value="nome_a_z">Nome País (A->Z)</option>
+					<option value="nome_z_a">Nome País (Z->A)</option>
+					
+					<option value="estado_a_z">Nome Estado (A->Z)</option>
+					<option value="estado_z_a">Nome Estado (Z->A)</option>
+					
+					<option value="municipio_a_z">Nome Municipio (A->Z)</option>
+					<option value="municipio_z_a">Nome Municipio (Z->A)</option>
+					
+				</select>
+			</form>-->
+		</fieldset>
+		<?php 
+			if(isset($_POST["filtroLoc"])){
+				$select = "select * from localizacao where pais like '$_POST[filtroLoc]%'";
+				echo "entro";
+			}else{
+				$select = "select * from localizacao";
+			}
+		?>
 		<table class="table">
 			<thead>
 				<tr>
