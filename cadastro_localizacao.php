@@ -26,7 +26,7 @@
 	
 			if (mysqli_query($link, $insert)){
 			
-				echo "<h1>Cadastrado!!</h1>";
+				echo "<h1 class='h1'>Cadastrado!!</h1>";
 			}else{
 				die(mysqli_error($link));
 			}

@@ -37,7 +37,7 @@
 	
 			if (mysqli_query($link, $insert)){
 			
-				echo "<h1>Alterado!!</h1>";
+				echo "<h1 class='h1'>Alterado!!</h1>";
 				
 			}else{
 				

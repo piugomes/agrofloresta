@@ -1,6 +1,8 @@
 <?php 
+
 	include "conexao.php";
 	include "funcao.php";
+	
 ?>
 
 <html>
@@ -10,6 +12,7 @@
 		<meta charset="utf-8" />
 		<title>Agrofloresta - Cultura</title>
 		<link rel="stylesheet" href="estilos.css"/>
+		
 	</head>
 	
 	<body class="corpo">
@@ -32,7 +35,7 @@
 	
 			if (mysqli_query($link, $insert)){
 			
-				echo "<h1>Cadastrado!!</h1>";
+				echo "<h1 class='h1'>Cadastrado!!</h1>";
 				
 			}else{
 				

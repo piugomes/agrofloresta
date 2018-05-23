@@ -23,8 +23,8 @@
 				<input type="submit" value="Enviar">
 			</form>
 			
-			<!-- <form action="listar_localizacao.php" method="post" name="ordenarLoc">
-				<select name="ordernacaoLoc" onchange="document.ordernacaoLoc.submit()">
+			<form action="listar_localizacao.php" method="post" name="ordenarLoc">
+				<select name="ordernacaoLoc" onchange="document.ordenarLoc.submit()">
 					
 					<option>:: Ordenar por ::</option>
 					
@@ -41,14 +41,56 @@
 					<option value="municipio_z_a">Nome Municipio (Z->A)</option>
 					
 				</select>
-			</form>-->
+			</form>
 		</fieldset>
 		<?php 
 			if(isset($_POST["filtroLoc"])){
 				$select = "select * from localizacao where pais like '$_POST[filtroLoc]%'";
-				echo "entro";
+				//echo $select;
 			}else{
 				$select = "select * from localizacao";
+			}
+			
+			session_start();
+			
+			if(isset($_POST["ordernacaoLoc"]) || isset($_SESSION["ordernacaoLoc"])){
+				if(isset($_POST["ordernacaoLoc"])){
+					$_SESSION["ordernacaoLoc"] = $_POST["ordernacaoLoc"];
+				}
+				
+				switch($_SESSION["ordernacaoLoc"]){
+					case "id_a_z":
+						$select .= " order by ID_localizacao";
+						break;
+					case "id_z_a":
+						$select .= " order by ID_localizacao desc";
+						break;
+						
+						
+					case "nome_a_z":
+						$select .= " order by pais";
+						break;
+					case "nome_z_a":
+						$select .= " order by pais desc";
+						break;
+						
+						
+					case "estado_a_z":
+						$select .= " order by estado";
+						break;
+					case "estado_z_a":
+						$select .= " order by estado desc";
+						break;
+						
+						
+					case "municipio_a_z":
+						$select .= " order by municipio";
+						break;
+					case "municipio_z_a":
+						$select .= " order by municipio desc";
+						break;
+
+				}
 			}
 		?>
 		<table class="table">
@@ -65,8 +107,7 @@
 			<tbody>
 				<?php
 					include "conexao.php";
-					
-					$select = "select * from localizacao order by ID_localizacao";
+				
 		 
 					$resultado = mysqli_query($link, $select) or die(mysqli_error($link));
 					

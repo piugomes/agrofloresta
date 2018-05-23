@@ -34,7 +34,7 @@
 	
 			if (mysqli_query($link, $update)){
 			
-				echo "<h1>Alterado!!</h1>";
+				echo "<h1 class='h1'>Alterado!!</h1>";
 			}else{
 				die(mysqli_error($link));
 			}
