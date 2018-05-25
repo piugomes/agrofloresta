@@ -15,7 +15,9 @@
 			
 			include "conexao.php";
 			
-			$sql = "select * from localizacao";
+			$get = $_GET["ID_localizacao"];
+			
+			$sql = "select * from localizacao where ID_localizacao = $get";
 			
 			$resultado = mysqli_query($link, $sql) or die (mysqli_error($link));
 			
