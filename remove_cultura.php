@@ -24,7 +24,7 @@
 			
 			if(mysqli_query($link, $delete)){
 				
-				echo "<h1 class='h1'>Removido!!</h1>";
+				header("Location: listar_cultura.php");
 				
 			}else {
 				

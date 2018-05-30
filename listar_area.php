@@ -276,7 +276,7 @@
 					$where 
 					$order";
 					
-					echo $select;
+					// echo $select;
 					
 					$resultado = mysqli_query($link, $select) or die( mysqli_error($link));
 					

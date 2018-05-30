@@ -17,14 +17,16 @@
 
 			$id = $_GET["id"];
 			
-			$delete = "DELETE FROM localizacao WHERE ID_area = '$id'";
 			
+			$delete = "DELETE FROM area WHERE ID_area = '$id'";
+			
+			echo $delete;
 			menu();
 			lista();
 			
 			if(mysqli_query($link, $delete)){
 				
-				echo "<h1 class='h1'>Removido!!</h1>";
+				header("Location: listar_area.php");
 				
 			}else {
 				

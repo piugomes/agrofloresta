@@ -20,7 +20,62 @@
 			lista();
 		
 		?>
-	
+		<fieldset class="fieldset">
+			<legend>Filtro de Dados</legend>
+			<form action="listar_cultura.php" method="post">
+				<label>Filtrar por País: </label>
+				<input type="text" name="filtroPais"/>
+				<br />
+				<br />
+				
+				<label>Filtrar por Estado: </label>
+				<input type="text" name="filtroEst"/>
+				<br />
+				<br />
+				
+				<label>Filtrar por Municipio: </label>
+				<input type="text" name="filtroMun"/>
+				<br />
+				<br />
+				
+				<label>Filtrar por Nome da Area: </label>
+				<input type="text" name="filtroNomeArea"/>
+				<br />
+				<br />
+				
+				<label>Filtrar por Tipo: </label>
+				<input type="text" name="filtroTipo"/>
+				<br />
+				<br />
+				
+				<label>Filtrar por Nome: </label>
+				<input type="text" name="filtroNome"/>
+				<br />
+				<br />
+				
+				<label>Filtrar por Renda: </label>
+				<input type="text" name="filtroRenda"/>
+				<br />
+				<br />
+				
+				<label>Filtrar por Gasto: </label>
+				<input type="text" name="filtroGasto"/>
+				<br />
+				<br />
+				
+				<label>Filtrar por Quantidade Produzida: </label>
+				<input type="text" name="filtroQuanProd"/>
+				<br />
+				<br />
+				
+				<label>Filtrar por Quantidade Estimada: </label>
+				<input type="text" name="filtroQuanEst"/>
+				<br />
+				<br />
+				
+				<input type="submit" value="Enviar"/>
+			</form>
+		</fieldset>
 		<table class="table">
 		
 			<thead>
@@ -45,12 +100,41 @@
 			<tbody>
 			
 				<?php
-				
+					$where = '';
+					
+					if(!empty($_POST["filtroPais"])){
+						$letra = $_POST['filtroPais'];
+						$where = "where pais like '$letra%'";
+					}
+					
+					if(!empty($_POST["filtroEst"])){
+						$letra = $_POST['filtroEst'];
+						if($where != ''){
+							$where .= " and estado like '$letra%'";
+						}else{
+							$where .= " where estado like '$letra%'";
+						}
+					}
+
+					if(!empty($_POST["filtroMun"])){
+						$letra = $_POST['filtroMun'];
+						if($where != ''){
+							$where .= " and municipio like '$letra%'";
+						}else{
+							$where .= " where municipio like '$letra%'";
+						}
+					}
+					
+					
+					
+					// ######################################################################################
+					
 					$select = "SELECT * FROM cultura
 					INNER JOIN area ON area.ID_area = cultura.cod_area
 					INNER JOIN localizacao ON localizacao.ID_localizacao = area.cod_localizacao";
 					
 					$resultado = mysqli_query($link, $select) or die( mysqli_error($link));
+					
 					
 					while( $linha = mysqli_fetch_array($resultado) ){
 						
