@@ -10,7 +10,7 @@
 	lista();
 	if(mysqli_query($link, $delete)){
 		
-		echo "<h1 class='h1'>Removido!!</h1>";
+		header("Location: listar_localizacao.php");
 		
 	}else {die(mysqli_error($link));}
 ?>
