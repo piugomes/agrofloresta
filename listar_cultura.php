@@ -39,7 +39,15 @@
 				<br />
 				
 				<label>Filtrar por Nome da Area: </label>
-				<input type="text" name="filtroNomeArea"/>
+				<select name="filtroNomeArea">
+					<?php 
+						$select = "select * from info_cultura";
+						$resultado = mysqli_query($link, $select) or die(mysqli_error($link));
+						while($linha = mysqli_fetch_array($resultado)){
+							echo "<option value='" .$linha["ID_cultura"] . "'>" . $linha["nome"] . "</option>";
+						}
+					?>
+				</select>
 				<br />
 				<br />
 				
@@ -101,19 +109,28 @@
 			
 				<?php
 					$where = '';
+		
+					if(!empty($_POST["filtroPais"]) ){
 					
-					if(!empty($_POST["filtroPais"])){
-						$letra = $_POST['filtroPais'];
-						$where = "where pais like '$letra%'";
+						$letra = $_POST['filtroPais'];					
+						if($where != ''){
+							$where .= "and pais LIKE '$letra%'";
+						}else{
+							$where = "WHERE pais LIKE '$letra%'";
+						}
 					}
 					
-					if(!empty($_POST["filtroEst"])){
+					if(!empty($_POST["filtroEst"]) ){
+						
 						$letra = $_POST['filtroEst'];
-						if($where != ''){
-							$where .= " and estado like '$letra%'";
-						}else{
-							$where .= " where estado like '$letra%'";
+						if( $where != '' ){
+							
+							$where .= " AND estado LIKE '$letra%'";							
+						}else{							
+							$where .= "WHERE estado LIKE '$letra%'";
+							
 						}
+						
 					}
 
 					if(!empty($_POST["filtroMun"])){
@@ -124,6 +141,46 @@
 							$where .= " where municipio like '$letra%'";
 						}
 					}
+					
+					if(!empty($_POST["filtroNomeArea"])){
+						$letra = $_POST['filtroNomeArea'];
+						if($where != ''){
+							$where .= " and nome like '$letra%'"; 
+						}else{
+							$where .= " where nome like '$letra%'"; 
+						}
+					}
+					
+					if(!empty($_POST["filtroTipo"])){
+						$letra = $_POST['filtroTipo'];
+						if($where != ''){
+							$where .= "and tipo like '$letra%'";
+						}else{
+							$where .= "where tipo like '$letra%'";
+						}
+					}
+					
+					if(!empty($_POST["filtroNome"])){
+						$letra = $_POST['filtroNome'];
+						if($where != ''){
+							$where .= "and nome like '$letra%'";
+						}else{
+							$where .= "where nome like '$letra%'";
+						}
+					}
+					
+					
+					if(!empty($_POST["filtroRenda"])){}
+					
+					
+					if(!empty($_POST["filtroGasto"])){}
+					
+					
+					if(!empty($_POST["filtroQuanProd"])){}
+					
+					
+					if(!empty($_POST["filtroQuanEst"])){}
+					
 					
 					
 					
